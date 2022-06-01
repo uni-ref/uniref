@@ -15,10 +15,12 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- dependencies -->
-        <spring.boot.version>2.6.7</spring.boot.version>
+        <spring.boot.version>2.7.0</spring.boot.version>
+        <spring.version>5.3.20</spring.version>
         <liquibase.version>4.10.0</liquibase.version>
         <!-- plugins -->
         <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+        <liquibase.maven.plugin.version>4.10.0</liquibase.maven.plugin.version>
     </properties>
 
     <dependencies>
@@ -45,6 +47,21 @@
                     <target>${maven.compiler.target}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>${liquibase.maven.plugin.version}</version>
+                <configuration>
+                    <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

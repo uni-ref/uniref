@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: c5a8b662ba814a6a89fd9e026d8c06ec
+      author: unirefadm
+      comment: Set of changes to create the DataType table
+      changes:
+        - createTable:
+            tableName: data_type
+            remarks: Table contains system data types
+            columns:
+              - column:
+                  name: id
+                  type: integer
+                  remarks: Data type identifier
+                  autoIncrement: true
+                  startWith: 1
+                  incrementBy: 1
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_data_type
+              - column:
+                  name: code
+                  type: varchar(50)
+                  remarks: Data type code
+                  constraints:
+                    nullable: false
+                    unique: true
+                    uniqueConstraintName: uix_data_type_code
+              - column:
+                  name: name
+                  type: varchar(255)
+                  remarks: Data type name
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(1000)
+                  remarks: Data type description
+                  constraints:
+                    nullable: true
+
