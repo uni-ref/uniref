@@ -10,7 +10,7 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.nar
@@ -19,12 +19,15 @@
 *.tar.gz
 *.rar
 
-# Eclipse #
+# Backup Files
+*.bkp
+
+# Eclipse
 .classpath
 .project
 .settings/
 
-# Intellij #
+# Intellij
 .idea/
 *.iml
 *.iws
